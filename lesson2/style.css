@@ -330,3 +330,243 @@ body {
     transform: rotate(10deg);
   }
 }
+
+#daynight {
+  display: none;
+}
+
+@keyframes smoke-rise {
+  0% {
+    transform: translate(-50%, 0) scale(0.4);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-25px, -90px) scale(2.4);
+    opacity: 0;
+  }
+}
+
+100% {
+  transform: translate(-25px, -90px) scale(2.4);
+  opacity: 0;
+}
+
+.sky::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #efef0b;
+  box-shadow:
+    120px 40px #efef0b,
+    260px 10px #efef0b,
+    420px 60px #efef0b,
+    560px 20px #efef0b,
+    700px 70px #efef0b,
+    850px 15px #efef0b,
+    980px 50px #efef0b,
+    60px 90px #efef0b;
+  opacity: 0;
+  transition: opacity 0.6s;
+  pointer-events: none;
+}
+
+#daynight:checked ~ .sky {
+  background-color: midnightblue;
+}
+
+#daynight:checked ~ .sky::after {
+  opacity: 1;
+}
+
+#daynight:checked ~ .sky .sun {
+  background-color: #f4f1de;
+  box-shadow: 0 0 30px 8px rgba(244, 241, 222, 0.5);
+}
+
+#daynight:checked ~ .sky .window {
+  background-color: gold;
+}
+
+#daynight:checked ~ .ground {
+  background-color: darkgreen;
+}
+
+#daynight:checked ~ .cloud {
+  opacity: 0.3;
+}
+
+#daynight:checked ~ .sky .smoke {
+  opacity: 1;
+}
+
+.chimney {
+  position: absolute;
+  width: 34px;
+  height: 100px;
+  top: -135px;
+  left: 220px;
+  border-radius: 3px 0 3px 0;
+  background-color: rgb(131, 127, 71);
+}
+
+.smoke {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.smoke-puff {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -18px;
+  left: 0px;
+  background-color: white;
+  border-radius: 50%;
+  animation: smoke-rise 3.6s linear infinite;
+}
+
+.smoke-puff:nth-child(2) {
+  animation-delay: -1.2s;
+}
+
+.smoke-puff:nth-child(3) {
+  animation-delay: -2.4s;
+}
+
+.person {
+  position: absolute;
+  width: 48px;
+  height: 130px;
+  top: 520px;
+  left: 640px;
+}
+
+.person div {
+  position: absolute;
+}
+
+.head {
+  top: 0px;
+  left: 10px;
+  width: 28px;
+  height: 30px;
+  background-color: #3f04f2;
+  border-radius: 50%;
+}
+
+.neck {
+  top: 26px;
+  left: 20px;
+  width: 8px;
+  height: 12px;
+  background-color: #3f04f2;
+}
+
+.eyes {
+  top: 13px;
+  left: 0px;
+  width: 28px;
+  height: 3px;
+}
+
+.left-eye,
+.right-eye {
+  top: 0px;
+  width: 3px;
+  height: 3px;
+  background-color: #04010c;
+  border-radius: 50%;
+}
+
+.left-eye {
+  left: 7px;
+}
+
+.right-eye {
+  left: 18px;
+}
+
+.mouth {
+  top: 20px;
+  left: 9px;
+  width: 10px;
+  height: 4px;
+  border-bottom: 2px solid #f40505;
+  border-radius: 50%;
+}
+
+.body {
+  top: 34px;
+  height: 48px;
+  left: 8px;
+  width: 32px;
+  background-color: #3f04f2;
+  border-radius: 9px 9px 4px 4px;
+}
+
+.arms {
+  top: 36px;
+  left: 0px;
+  width: 48px;
+  height: 48px;
+}
+
+.left-arm,
+.right-arm {
+  top: 0px;
+  width: 8px;
+  height: 46px;
+  background-color: #3f04f2;
+  border-radius: 6px;
+  transform-origin: 50% 0;
+}
+
+.left-arm {
+  left: 2px;
+  transform: rotate(12deg);
+}
+
+.right-arm {
+  left: 38px;
+  transform: rotate(-12deg);
+}
+
+.legs {
+  top: 80px;
+  left: 0px;
+  width: 48px;
+  height: 50px;
+}
+
+.left-leg,
+.right-leg {
+  top: 0px;
+  width: 10px;
+  height: 50px;
+  background-color: #3f04f2;
+  border-radius: 6px;
+}
+
+.left-leg {
+  left: 10px;
+}
+
+.right-leg {
+  left: 28px;
+}
