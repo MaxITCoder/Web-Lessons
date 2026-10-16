@@ -3,119 +3,126 @@
     <title>Мой дом</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body>
-    <input type="checkbox" id="daynight" />
+  <>
+  <input type="checkbox" id="daynight" />
 
-    <div class="sky">
-      <label for="daynight" class="sun"></label>
-      <div class="house">
-        <div class="chimney">
-          <div class="smoke">
-            <span class="smoke-puff"></span>
-            <span class="smoke-puff"></span>
-            <span class="smoke-puff"></span>
-          </div>
-        </div>
-        <div class="roof"></div>
-        <div class="wall">
-          <div class="window">
-            <div class="window-line vertical"></div>
-            <div class="window-line horizontal"></div>
-          </div>
-          <div class="door">
-            <div class="door-handle"></div>
-          </div>
+  <div class="sky">
+    <label for="daynight" class="sun"></label>
+    <div class="house">
+      <div class="chimney">
+        <div class="smoke">
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
+          <span class="smoke-puff"></span>
         </div>
       </div>
-      <div class="tree">
-        <div class="tree-top"></div>
-        <div class="tree-bot"></div>
-
-        <div class="birdhouse">
-          <div class="birdhouse-roof"></div>
-          <div class="birdhouse-hole"></div>
+      <div class="roof"></div>
+      <div class="wall">
+        <div class="window">
+          <div class="window-line vertical"></div>
+          <div class="window-line horizontal"></div>
+        </div>
+        <div class="door">
+          <div class="door-handle"></div>
         </div>
       </div>
     </div>
+    <div class="tree">
+      <div class="tree-top"></div>
+      <div class="tree-bot"></div>
 
-    <div class="ground">
-      <div class="cat">
-        <div class="cat-tail"></div>
-        <div class="cat-leg back"></div>
-        <div class="cat-body"></div>
-        <div class="cat-leg front"></div>
-        <div class="cat-head"></div>
-        <div class="cat-ear"></div>
-        <div class="cat-eye"></div>
-        <div class="cat-nose"></div>
+      <div class="birdhouse">
+        <div class="birdhouse-roof"></div>
+        <div class="birdhouse-hole"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ground">
+    <div class="cat">
+      <div class="cat-tail"></div>
+      <div class="cat-leg back"></div>
+      <div class="cat-body"></div>
+      <div class="cat-leg front"></div>
+      <div class="cat-head"></div>
+      <div class="cat-ear"></div>
+      <div class="cat-eye"></div>
+      <div class="cat-nose"></div>
+    </div>
+  </div>
+
+  <div class="cloud">
+    <div class="cloud-one"></div>
+    <div class="cloud-two"></div>
+    <div class="cloud-three"></div>
+  </div>
+  <div class="person">
+    <div class="head">
+      <div class="mouth"></div>
+      <div class="eyes">
+        <div class="left-eye"></div>
+        <div class="right-eye"></div>
       </div>
     </div>
 
-    <div class="cloud">
-      <div class="cloud-one"></div>
-      <div class="cloud-two"></div>
-      <div class="cloud-three"></div>
+    <div class="neck"></div>
+
+    <div class="body"></div>
+
+    <div class="arms">
+      <div class="left-arm"></div>
+      <div class="right-arm"></div>
     </div>
-    <div class="person">
-      <div class="head">
-        <div class="mouth"></div>
-        <div class="eyes">
-          <div class="left-eye"></div>
-          <div class="right-eye"></div>
-        </div>
-      </div>
 
-      <div class="neck"></div>
-
-      <div class="body"></div>
-
-      <div class="arms">
-        <div class="left-arm"></div>
-        <div class="right-arm"></div>
-      </div>
-
-      <div class="legs">
-        <div class="left-leg"></div>
-        <div class="right-leg"></div>
-      </div>
+    <div class="legs">
+      <div class="left-leg"></div>
+      <div class="right-leg"></div>
     </div>
-    <script>
-      var person = document.querySelector(".person");
-      var x = 640;
-      var y = 520;
-      var step = 20;
-      var stopTimer;
+  </div>
+  <script>
+    var person = document.querySelector(".person");
+    var x = 640;
+    var y = 520;
+    var step = 20;
+    var stopTimer;
 
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "ArrowLeft") {
-          x = x - step;
-        }
-        if (event.key === "ArrowRight") {
-          x = x + step;
-        }
-        if (event.key === "ArrowUp") {
-          y = y - step;
-        }
-        if (event.key === "ArrowDown") {
-          y = y + step;
-        }
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        x = x - step;
+      }
+      if (event.key === "ArrowRight") {
+        x = x + step;
+      }
+      if (event.key === "ArrowUp") {
+        y = y - step;
+      }
+      if (event.key === "ArrowDown") {
+        y = y + step;
+      }
 
-        if (x < 0) {
-          x = 0;
-        }
-        if (x > 900) {
-          x = 900;
-        }
-        if (y < 385) {
-          y = 385;
-        }
-        if (y > 560) {
-          y = 560;
-        }
-        person.style.left = x + "px";
+      if (x < 0) {
+        x = 0;
+      }
+      if (x > 900) {
+        x = 900;
+      }
+      if (y < 385) {
+        y = 385;
+      }
+      if (y > 560) {
+        y = 560;
+      }
+      person.style.left = x + "px";
 
-        person.style.top = y + "px";
-      });
-    </script>
-  </body>
+      person.style.top = y + "px";
+    });
+  </script>
+
+  <div class="bird">
+    <div class="bird-body">
+      <div class="bird-eye"></div>
+      <div class="bird-beak"></div>
+      <div class="bird-wing"></div>
+    </div>
+  </div>
 </html>

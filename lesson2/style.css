@@ -570,3 +570,76 @@ body {
 .right-leg {
   left: 28px;
 }
+
+.bird {
+  position: absolute;
+  animation: bird-flight 12s linear infinite;
+}
+
+.bird-body {
+  position: absolute;
+  left: -25px;
+  top: -15px;
+  width: 45px;
+  height: 20px;
+  background-color: #ed0404;
+  border-radius: 40%;
+}
+
+.bird-eye {
+  position: absolute;
+  right: 9px;
+  top: 6px;
+  width: 5px;
+  height: 5px;
+  background-color: #160101;
+  border-radius: 50%;
+}
+
+.bird-beak {
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  border-left: 12px solid rgb(241, 160, 8);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.bird-wing {
+  position: absolute;
+  left: 10px;
+  top: 13px;
+  width: 25px;
+  height: 12px;
+  background-color: #ed0404;
+  border-radius: 35%;
+  transform: left center;
+  animation: bird-flap 0.3s infinite;
+}
+
+@keyframes bird-flap {
+  from {
+    transform: rotate(-35deg);
+  }
+  to {
+    transform: rotate(35deg);
+  }
+}
+
+@keyframes bird-flight {
+  0%,
+  100% {
+    left: 95px;
+    top: 260px;
+  }
+
+  35% {
+    left: 580px;
+    top: 140px;
+  }
+
+  65% {
+    left: 380px;
+    top: 545px;
+  }
+}
